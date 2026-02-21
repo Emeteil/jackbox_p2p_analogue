@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Game - Host</title>
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.1/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div id="lobby-ui" class="lobby-overlay">
+        <div class="lobby-content glass-panel">
+            <h1 class="lobby-title">TEMPLATE GAME</h1>
+            <div class="qr-container">
+                <canvas id="qr-code"></canvas>
+            </div>
+            <div class="join-info">
+                <p>Join on your phone:</p>
+                <div class="url-badge" id="join-url">Loading...</div>
+            </div>
+            <div class="players-section">
+                <h3>PARTICIPANTS (<span id="player-count">0</span>)</h3>
+                <div id="players-list" class="players-grid"></div>
+            </div>
+            <button id="host-start-indicator" class="primary-btn" disabled>Waiting for VIP to start...</button>
+        </div>
+    </div>
+
+    <div id="game-container"></div>
+
+    <script src="../../lib/utils.js"></script>
+    <script src="../../lib/connection_manager.js"></script>
+    <script src="../../lib/localization.js"></script>
+    <script src="../../lib/host_engine.js"></script>
+    <script src="host.js"></script>
+
+    <script>
+        const engine = new HostEngine('template', 1);
+        document.addEventListener('DOMContentLoaded', () => {
+            engine.initLobby('qr-code', 'join-url', 'players-list', 'host-start-indicator');
+            if (typeof window.bindGameToEngine === 'function') {
+                window.bindGameToEngine(engine);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "ready": "Ready?",
+    "done": "DONE!",
+    "correct": "CORRECT!",
+    "too_slow": "TOO SLOW!",
+    "wrong": "WRONG!",
+    "game_over": "Game Over!",
+    "finished": "Finished!",
+    "reconnected": "Reconnected!",
+    "lobby_title": "QUIZ TIME!"
+}

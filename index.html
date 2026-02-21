@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackbox Web Analogue</title>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="lang-switcher">
+        <button id="lang-en" onclick="i18n.setLanguage('en')" class="lang-btn">EN</button>
+        <button id="lang-ru" onclick="i18n.setLanguage('ru')" class="lang-btn">RU</button>
+    </div>
+    <div class="container main-menu">
+        <h1 class="logo">SHIT<span>BOX</span></h1>
+        <p class="subtitle" id="menu-subtitle">A serverless P2P party game platform</p>
+        <div class="games-list">
+            <a href="games/quiz/index.html" class="game-card">
+                <div class="game-icon">❓</div>
+                <div class="game-info">
+                    <h2 id="game-quiz-title">Trivia Quiz</h2>
+                    <p id="game-quiz-desc">Test your knowledge with friends</p>
+                </div>
+            </a>
+            <a href="games/template/index.html" class="game-card">
+                <div class="game-icon">🛠️</div>
+                <div class="game-info">
+                    <h2 id="game-template-title">Game Template</h2>
+                    <p id="game-template-desc">Learn how to build your own game</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="lib/localization.js"></script>
+    <script>
+        const i18n = new LocalizationManager();
+        async function init() {
+            await i18n.init();
+            document.getElementById('menu-subtitle').textContent = i18n.t('menu_subtitle');
+            document.getElementById('game-quiz-title').textContent = i18n.t('game_quiz_title');
+            document.getElementById('game-quiz-desc').textContent = i18n.t('game_quiz_desc');
+            document.getElementById('game-template-title').textContent = i18n.t('game_template_title');
+            document.getElementById('game-template-desc').textContent = i18n.t('game_template_desc');
+            document.getElementById('add-game-title').textContent = i18n.t('add_game_title');
+            document.getElementById('add-game-desc').textContent = i18n.t('add_game_desc');
+
+            const activeBtn = document.getElementById(`lang-${i18n.lang}`);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+        init();
+    </script>
+</body>
+
+</html>

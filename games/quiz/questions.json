@@ -1,0 +1,102 @@
+[
+    {
+        "text": "What does HTML stand for?",
+        "answers": [
+            "Hyper Text Markup Language",
+            "High Tech Multi Language",
+            "Hyper Transfer Markup Language",
+            "Home Tool Markup Language"
+        ],
+        "correct": 0
+    },
+    {
+        "text": "Which of these is NOT a JS framework?",
+        "answers": [
+            "React",
+            "Vue",
+            "Angular",
+            "Django"
+        ],
+        "correct": 3
+    },
+    {
+        "text": "What color is the sky on a clear day?",
+        "answers": [
+            "Red",
+            "Green",
+            "Blue",
+            "Yellow"
+        ],
+        "correct": 2
+    },
+    {
+        "text": "Which planet is known as the Red Planet?",
+        "answers": [
+            "Venus",
+            "Mars",
+            "Jupiter",
+            "Saturn"
+        ],
+        "correct": 1
+    },
+    {
+        "text": "What is the capital of France?",
+        "answers": [
+            "Berlin",
+            "Madrid",
+            "Paris",
+            "Rome"
+        ],
+        "correct": 2
+    },
+    {
+        "text": "Who wrote 'Romeo and Juliet'?",
+        "answers": [
+            "Charles Dickens",
+            "William Shakespeare",
+            "Mark Twain",
+            "Jane Austen"
+        ],
+        "correct": 1
+    },
+    {
+        "text": "What is the largest ocean on Earth?",
+        "answers": [
+            "Atlantic Ocean",
+            "Indian Ocean",
+            "Arctic Ocean",
+            "Pacific Ocean"
+        ],
+        "correct": 3
+    },
+    {
+        "text": "Which element has the chemical symbol 'O'?",
+        "answers": [
+            "Gold",
+            "Oxygen",
+            "Osmium",
+            "Iron"
+        ],
+        "correct": 1
+    },
+    {
+        "text": "In which year did the Titanic sink?",
+        "answers": [
+            "1912",
+            "1905",
+            "1898",
+            "1923"
+        ],
+        "correct": 0
+    },
+    {
+        "text": "What is the square root of 64?",
+        "answers": [
+            "6",
+            "7",
+            "8",
+            "9"
+        ],
+        "correct": 2
+    }
+]
