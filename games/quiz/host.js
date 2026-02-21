@@ -33,11 +33,11 @@ window.bindGameToEngine = (engine) => {
         }
     };
 
-    SoundManager.loadSound('lobby', 'https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f694b.mp3');
-    SoundManager.loadSound('timer', 'https://cdn.pixabay.com/audio/2021/08/09/audio_82c8907b22.mp3');
-    SoundManager.loadSound('correct', 'https://cdn.pixabay.com/audio/2021/08/04/audio_bb630aa077.mp3');
-    SoundManager.loadSound('wrong', 'https://cdn.pixabay.com/audio/2022/03/10/audio_c35278d65a.mp3');
-    SoundManager.loadSound('start', 'https://cdn.pixabay.com/audio/2021/11/25/audio_91b32e0179.mp3');
+    SoundManager.loadSound('lobby', 'https://cdn.pixabay.com/audio/2024/12/19/audio_283c8c6c40.mp3');
+    SoundManager.loadSound('timer', 'https://cdn.pixabay.com/-');
+    SoundManager.loadSound('correct', 'https://cdn.pixabay.com/audio/2022/03/24/audio_4ff823c44c.mp3');
+    SoundManager.loadSound('wrong', 'https://cdn.pixabay.com/audio/2022/03/10/audio_8b0fae46ef.mp3');
+    SoundManager.loadSound('start', 'https://cdn.pixabay.com/-');
 
     async function loadQuestions() {
         const lang = i18n ? i18n.lang : 'en';
