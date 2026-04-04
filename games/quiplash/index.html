@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia Quiz - Host</title>
+    <meta name="referrer" content="no-referrer">
+    <title>КВИПЛЭШ — SHITBOX Party</title>
+    <meta name="description" content="Квиплэш — игра в остроумие для компании друзей">
     <link rel="stylesheet" href="../../global.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
@@ -13,21 +15,24 @@
 </head>
 
 <body>
-    <div id="lobby-ui" class="lobby-overlay">
-        <div class="lobby-content glass-panel">
-            <h1 class="lobby-title">QUIZ TIME!</h1>
+    <div id="lobby-ui" class="lobby-overlay" style="background: linear-gradient(135deg, #1a0a2e, #2d1b4e);">
+        <div class="lobby-content glass-panel" style="border-color: rgba(124, 58, 237, 0.3);">
+            <h1 class="lobby-title"
+                style="background: linear-gradient(135deg, #fbbf24, #ec4899, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 3rem;">
+                КВИПЛЭШ</h1>
             <div class="qr-container">
                 <canvas id="qr-code"></canvas>
             </div>
             <div class="join-info">
-                <p>Join on your phone:</p>
-                <div class="url-badge" id="join-url">Loading...</div>
+                <p>Подключайтесь с телефона:</p>
+                <div class="url-badge" id="join-url">Загрузка...</div>
             </div>
             <div class="players-section">
-                <h3>PARTICIPANTS (<span id="player-count">0</span>)</h3>
+                <h3>ИГРОКИ (<span id="player-count">0</span>)</h3>
                 <div id="players-list" class="players-grid"></div>
             </div>
-            <button id="host-start-indicator" class="primary-btn" disabled>Waiting for VIP to start...</button>
+            <button id="host-start-indicator" class="primary-btn" disabled
+                style="background: linear-gradient(135deg, #7c3aed, #ec4899);">Ожидаем игроков...</button>
         </div>
     </div>
     <div id="game-container"></div>
@@ -35,19 +40,13 @@
     <script src="../../lib/connection_manager.js"></script>
     <script src="../../lib/localization.js"></script>
     <script src="../../lib/host_engine.js"></script>
+    <script src="narrator.js"></script>
+    <script src="sound.js"></script>
     <script src="host.js"></script>
     <script>
-        const engine = new HostEngine('quiz', 2);
+        const engine = new HostEngine('quiplash', 3);
         document.addEventListener('DOMContentLoaded', async () => {
             await engine.initLobby('qr-code', 'join-url', 'players-list', 'host-start-indicator');
-
-            const i18n = engine.i18n;
-            if (i18n) {
-                document.querySelector('.lobby-title').textContent = i18n.t('lobby_title');
-                document.querySelector('.join-info p').textContent = i18n.t('join_on_phone');
-                document.querySelector('.players-section h3').innerHTML = `${i18n.t('participants')} (<span id="player-count">${engine.players.length}</span>)`;
-            }
-
             if (typeof window.bindGameToEngine === 'function') {
                 window.bindGameToEngine(engine);
             }

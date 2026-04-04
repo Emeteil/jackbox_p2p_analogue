@@ -1,0 +1,1000 @@
+:root {
+    --ql-bg-dark: #1a0a2e;
+    --ql-bg-mid: #2d1b4e;
+    --ql-purple: #7c3aed;
+    --ql-purple-light: #a78bfa;
+    --ql-cyan: #06b6d4;
+    --ql-cyan-dark: #0891b2;
+    --ql-yellow: #fbbf24;
+    --ql-yellow-dark: #f59e0b;
+    --ql-pink: #ec4899;
+    --ql-green: #10b981;
+    --ql-red: #ef4444;
+    --ql-white: #f8fafc;
+    --ql-gray: #94a3b8;
+}
+
+.ql-video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.ql-host {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ql-title-screen {
+    text-align: center;
+    animation: qlFadeIn 1s ease-out;
+}
+
+.ql-logo {
+    font-size: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--ql-yellow), var(--ql-pink), var(--ql-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 20px rgba(124, 58, 237, 0.5));
+    animation: qlPulse 2s ease-in-out infinite;
+}
+
+.ql-subtitle {
+    font-size: 1.5rem;
+    color: var(--ql-gray);
+    margin-top: 0.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.ql-round-banner {
+    text-align: center;
+    padding: 2rem;
+    animation: qlSlideDown 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ql-round-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--ql-yellow);
+    text-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    text-transform: uppercase;
+}
+
+.ql-round-subtitle {
+    font-size: 1.3rem;
+    color: var(--ql-purple-light);
+    margin-top: 0.5rem;
+}
+
+.ql-write-phase {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.ql-write-phase-centered {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ql-write-header {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--ql-yellow);
+    margin-bottom: 1.5rem;
+}
+
+.ql-write-header-large {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--ql-yellow);
+    text-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.ql-timer-ring {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ql-timer-ring-large {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 0 40px rgba(6, 182, 212, 0.15),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.ql-timer-ring-large::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: var(--ql-cyan);
+    border-right-color: var(--ql-purple);
+    animation: qlSpin 2s linear infinite;
+}
+
+.ql-timer-ring::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top-color: var(--ql-cyan);
+    animation: qlSpin 1s linear infinite;
+}
+
+.ql-timer-text {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--ql-white);
+}
+
+.ql-timer-text-large {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--ql-white);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.ql-timer-text.warning,
+.ql-timer-text-large.warning {
+    color: var(--ql-red);
+    animation: qlShake 0.3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.ql-write-hint {
+    font-size: 1.4rem;
+    color: var(--ql-purple-light);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ql-players-progress {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.ql-player-chip {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ql-player-chip.done {
+    border-color: var(--ql-green);
+    background: rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.ql-player-chip .emoji {
+    font-size: 1.4rem;
+}
+
+.ql-player-chip .status-icon {
+    font-size: 1rem;
+}
+
+.ql-duel-phase {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.ql-duel-prompt {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--ql-white);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.ql-prompt-fullscreen {
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--ql-yellow);
+    text-shadow: 0 10px 30px rgba(251, 191, 36, 0.5);
+    max-width: 900px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: qlPromptSlam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+}
+
+.shrink-to-top {
+    animation: qlShrinkToTop 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.ql-duel-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: qlFadeIn 0.5s ease-out;
+}
+
+.answer-pop {
+    animation: qlWordPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ql-final-words-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.ql-final-word {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: qlFinalWordReveal 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.ql-duel-answers {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.ql-answer-card {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid transparent;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    animation: qlCardSlam 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ql-answer-card.yellow {
+    border-color: var(--ql-yellow);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
+}
+
+.ql-answer-card.cyan {
+    border-color: var(--ql-cyan);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.2);
+}
+
+.ql-answer-card .ql-answer-text {
+    position: relative;
+    z-index: 2;
+}
+
+.ql-answer-card .ql-vote-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.ql-answer-card.yellow .ql-vote-fill {
+    background: linear-gradient(to top, rgba(251, 191, 36, 0.3), transparent);
+}
+
+.ql-answer-card.cyan .ql-vote-fill {
+    background: linear-gradient(to top, rgba(6, 182, 212, 0.3), transparent);
+}
+
+.ql-answer-card .ql-vote-percent {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.ql-answer-card .ql-vote-percent.visible {
+    opacity: 1;
+}
+
+.ql-answer-card .ql-author-reveal {
+    font-size: 1rem;
+    color: var(--ql-gray);
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.ql-answer-card .ql-author-reveal.visible {
+    opacity: 1;
+}
+
+.ql-answer-card .ql-points-popup {
+    position: absolute;
+    top: 10%;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--ql-green);
+    opacity: 0;
+    animation: qlPointsFloat 1.5s ease-out forwards;
+    z-index: 3;
+}
+
+.ql-vote-timer {
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--ql-white);
+}
+
+.ql-quiplash-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    animation: qlFadeIn 0.2s ease-out;
+}
+
+.ql-quiplash-text {
+    font-size: 8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--ql-yellow), var(--ql-pink), var(--ql-cyan), var(--ql-yellow));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: qlRainbow 1s ease-in-out infinite, qlQuiplashPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.6));
+}
+
+.ql-scoreboard {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.ql-scoreboard-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--ql-yellow);
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.ql-score-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: qlSlideIn 0.5s ease-out backwards;
+}
+
+.ql-score-row .rank {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--ql-gray);
+    min-width: 2rem;
+    text-align: center;
+}
+
+.ql-score-row:nth-child(1) .rank {
+    color: var(--ql-yellow);
+}
+
+.ql-score-row:nth-child(2) .rank {
+    color: #c0c0c0;
+}
+
+.ql-score-row:nth-child(3) .rank {
+    color: #cd7f32;
+}
+
+.ql-score-row .player-emoji {
+    font-size: 2rem;
+}
+
+.ql-score-row .player-name {
+    flex: 1;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.ql-score-row .player-score {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--ql-cyan);
+}
+
+.ql-score-row .score-delta {
+    font-size: 0.9rem;
+    color: var(--ql-green);
+    font-weight: 700;
+}
+
+.ql-winner-screen {
+    text-align: center;
+    animation: qlFadeIn 1s ease-out;
+}
+
+.ql-winner-emoji {
+    font-size: 8rem;
+    animation: qlBounce 1s ease-in-out infinite;
+}
+
+.ql-winner-crown {
+    font-size: 4rem;
+    animation: qlFloat 2s ease-in-out infinite;
+}
+
+.ql-winner-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--ql-yellow);
+    margin: 1rem 0;
+    text-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
+.ql-winner-score {
+    font-size: 2rem;
+    color: var(--ql-cyan);
+    font-weight: 700;
+}
+
+.ql-confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 400;
+    overflow: hidden;
+}
+
+.ql-confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    animation: qlConfettiFall linear forwards;
+}
+
+.ql-player-write {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--ql-bg-dark), var(--ql-bg-mid));
+}
+
+.ql-prompt-card {
+    background: rgba(124, 58, 237, 0.2);
+    border: 2px solid var(--ql-purple);
+    border-radius: 16px;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--ql-white);
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+}
+
+.ql-final-prompt {
+    border-color: var(--ql-pink);
+    background: rgba(236, 72, 153, 0.2);
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+}
+
+.ql-write-area {
+    width: 100%;
+    max-width: 400px;
+}
+
+.ql-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--ql-white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 0.5rem;
+}
+
+.ql-input:focus {
+    border-color: var(--ql-purple);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.3);
+}
+
+.ql-final-input {
+    margin-bottom: 0.8rem;
+}
+
+.ql-char-count {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--ql-gray);
+    margin-bottom: 1rem;
+}
+
+.ql-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--ql-purple), var(--ql-pink));
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 rgba(109, 40, 217, 1);
+}
+
+.ql-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.ql-submit-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0 rgba(109, 40, 217, 1);
+}
+
+.ql-submit-btn:disabled {
+    background: #475569;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.ql-prompt-counter {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--ql-gray);
+}
+
+.ql-player-vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--ql-bg-dark), var(--ql-bg-mid));
+}
+
+.ql-vote-prompt {
+    font-size: 1rem;
+    color: var(--ql-gray);
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.ql-vote-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+    border: 3px solid;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--ql-white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.ql-vote-yellow {
+    border-color: var(--ql-yellow);
+}
+
+.ql-vote-yellow:hover {
+    background: rgba(251, 191, 36, 0.15);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+    transform: scale(1.02);
+}
+
+.ql-vote-cyan {
+    border-color: var(--ql-cyan);
+}
+
+.ql-vote-cyan:hover {
+    background: rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    transform: scale(1.02);
+}
+
+.ql-vote-card:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.ql-vote-card.selected {
+    opacity: 1 !important;
+    transform: scale(1.05);
+}
+
+.ql-vote-card.selected.ql-vote-yellow {
+    background: rgba(251, 191, 36, 0.25);
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+}
+
+.ql-vote-card.selected.ql-vote-cyan {
+    background: rgba(6, 182, 212, 0.25);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+}
+
+.ql-player-wait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--ql-bg-dark), var(--ql-bg-mid));
+}
+
+.ql-wait-icon {
+    font-size: 4rem;
+    animation: qlBounce 2s ease-in-out infinite;
+}
+
+.ql-wait-text {
+    font-size: 1.3rem;
+    color: var(--ql-gray);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.ql-vote-confirmed {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--ql-green);
+    font-weight: 900;
+    animation: qlScaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ql-transition-video {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.ql-duel-counter {
+    font-size: 1rem;
+    color: var(--ql-gray);
+    margin-bottom: 0.5rem;
+}
+
+@keyframes qlFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes qlSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes qlSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes qlCardSlam {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) rotate(5deg);
+    }
+
+    60% {
+        transform: scale(0.95) rotate(-1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes qlPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes qlShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+@keyframes qlSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes qlBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes qlFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes qlPointsFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+}
+
+@keyframes qlRainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes qlQuiplashPop {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes qlConfettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes qlScaleIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes qlPromptSlam {
+    0% {
+        transform: scale(3) rotate(-5deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes qlShrinkToTop {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        font-size: 4rem;
+    }
+    100% {
+        transform: scale(0.6) translateY(-100px);
+        opacity: 0;
+        font-size: 1.8rem;
+    }
+}
+
+@keyframes qlWordPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes qlFinalWordReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
